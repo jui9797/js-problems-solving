@@ -45,3 +45,31 @@ function wordCount(str) {
 }
 
 console.log(wordCount("I am learning JavaScript")); // 4
+
+function firstNonRepeatingChar(str) {
+  // frequency count রাখার জন্য object বানাই
+  const freq = {};
+
+  // step 1: প্রতিটি character এর frequency count করি
+  for (let char of str) {
+    if (freq[char]) {
+      freq[char]++;
+    } else {
+      freq[char] = 1;
+    }
+  }
+
+  // step 2: আবার string loop করি, প্রথম যেটার frequency 1 সেটা return করি
+  for (let char of str) {
+    if (freq[char] === 1) {
+      return char;
+    }
+  }
+
+  return null; // যদি সব repeat হয়
+}
+
+// Example test
+console.log(firstNonRepeatingChar("programming")); // Output: "p"
+console.log(firstNonRepeatingChar("aabbcc")); // Output: null
+console.log(firstNonRepeatingChar("javascript")); // Output: "j"
