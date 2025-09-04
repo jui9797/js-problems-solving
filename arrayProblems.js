@@ -47,3 +47,18 @@ function flatten(arr) {
 }
 
 console.log(flatten([1, [2, [3, 4]], 5])); // [1,2,3,4,5]
+
+// Find the missing number in an array
+function findMissing(arr, n) {
+  let expectedSum = (n * (n + 1)) / 2; // sum of 1 to n
+  let actualSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    actualSum += arr[i];
+  }
+
+  return expectedSum - actualSum;
+}
+
+// Example (missing number is 4)
+console.log(findMissing([1, 2, 3, 5, 6], 6)); // Output: 4
