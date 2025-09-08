@@ -95,3 +95,12 @@ function lengthOfLongestSubstring(s) {
 console.log(lengthOfLongestSubstring("abcabcbb")); // 3
 console.log(lengthOfLongestSubstring("bbbbb")); // 1
 console.log(lengthOfLongestSubstring("pwwkew")); // 3
+
+// Check if Two Strings are Anagrams
+function areAnagrams(str1, str2) {
+  let normalize = (s) => s.split("").sort().join("");
+  return normalize(str1) === normalize(str2);
+}
+
+console.log(areAnagrams("listen", "silent")); // true
+console.log(areAnagrams("hello", "world")); // false
