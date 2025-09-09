@@ -81,3 +81,13 @@ function pairSum(arr, target) {
 // Example
 console.log(pairSum([1, 2, 3, 4, 5, 6], 7));
 // Output: [ [1,6], [2,5], [3,4] ]
+
+// Find Missing Number in a Range
+function findMissingNumber(arr, n) {
+  let expectedSum = (n * (n + 1)) / 2;
+  let actualSum = arr.reduce((sum, num) => sum + num, 0);
+  return expectedSum - actualSum;
+}
+
+console.log(findMissingNumber([1, 2, 4, 5, 6], 6));
+// Output: 3
