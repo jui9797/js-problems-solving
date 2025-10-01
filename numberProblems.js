@@ -33,3 +33,11 @@ log();
 log();
 log();
 // Only runs once, 1 second after last call
+
+// Fibonacci Series (Iterative)
+function fibonacci(n) {
+  let arr = [0, 1];
+  for (let i = 2; i < n; i++) arr.push(arr[i - 1] + arr[i - 2]);
+  return arr;
+}
+console.log(fibonacci(7)); // [0,1,1,2,3,5,8]
