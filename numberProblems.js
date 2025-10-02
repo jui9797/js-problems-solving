@@ -41,3 +41,16 @@ function fibonacci(n) {
   return arr;
 }
 console.log(fibonacci(7)); // [0,1,1,2,3,5,8]
+
+// Anagram Checker
+function isAnagram(a, b) {
+  if (a.length !== b.length) return false;
+  let count = {};
+  for (let ch of a) count[ch] = (count[ch] || 0) + 1;
+  for (let ch of b) {
+    if (!count[ch]) return false;
+    count[ch]--;
+  }
+  return true;
+}
+console.log(isAnagram("listen", "silent")); // true
