@@ -104,3 +104,30 @@ function areAnagrams(str1, str2) {
 
 console.log(areAnagrams("listen", "silent")); // true
 console.log(areAnagrams("hello", "world")); // false
+
+// Generate Random Password
+function generatePassword(len) {
+  let chars =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
+  let password = "";
+  for (let i = 0; i < len; i++) {
+    password += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return password;
+}
+console.log(generatePassword(10));
+
+// Debounce Function
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+const log = debounce(() => console.log("Typing stopped"), 1000);
+log();
+log();
+log();
+// Only prints once after 1s
