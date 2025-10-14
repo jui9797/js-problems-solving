@@ -131,3 +131,18 @@ log();
 log();
 log();
 // Only prints once after 1s
+
+// Throttle Function
+function throttle(fn, limit) {
+  let waiting = false;
+  return function (...args) {
+    if (!waiting) {
+      fn.apply(this, args);
+      waiting = true;
+      setTimeout(() => (waiting = false), limit);
+    }
+  };
+}
+
+const logScroll = throttle(() => console.log("Scrolled"), 1000);
+window.addEventListener("scroll", logScroll);
