@@ -144,5 +144,18 @@ function throttle(fn, limit) {
   };
 }
 
+// const logScroll = throttle(() => console.log("Scrolled"), 1000);
+window.addEventListener("scroll", logScroll);
+function throttle(fn, limit) {
+  let waiting = false;
+  return function (...args) {
+    if (!waiting) {
+      fn.apply(this, args);
+      waiting = true;
+      setTimeout(() => (waiting = false), limit);
+    }
+  };
+}
+
 const logScroll = throttle(() => console.log("Scrolled"), 1000);
 window.addEventListener("scroll", logScroll);
