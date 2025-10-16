@@ -144,18 +144,19 @@ function throttle(fn, limit) {
   };
 }
 
-// const logScroll = throttle(() => console.log("Scrolled"), 1000);
-window.addEventListener("scroll", logScroll);
-function throttle(fn, limit) {
-  let waiting = false;
-  return function (...args) {
-    if (!waiting) {
-      fn.apply(this, args);
-      waiting = true;
-      setTimeout(() => (waiting = false), limit);
-    }
-  };
-}
-
 const logScroll = throttle(() => console.log("Scrolled"), 1000);
 window.addEventListener("scroll", logScroll);
+
+// Find Even & Odd Numbers Separately
+function separateEvenOdd(arr) {
+  let even = [],
+    odd = [];
+  for (let num of arr) {
+    if (num % 2 === 0) even.push(num);
+    else odd.push(num);
+  }
+  return { even, odd };
+}
+
+console.log(separateEvenOdd([1, 2, 3, 4, 5, 6]));
+// { even: [2,4,6], odd: [1,3,5] }
