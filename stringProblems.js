@@ -160,3 +160,16 @@ function separateEvenOdd(arr) {
 
 console.log(separateEvenOdd([1, 2, 3, 4, 5, 6]));
 // { even: [2,4,6], odd: [1,3,5] }
+
+// Anagram Checker
+function isAnagram(a, b) {
+  if (a.length !== b.length) return false;
+  let count = {};
+  for (let ch of a) count[ch] = (count[ch] || 0) + 1;
+  for (let ch of b) {
+    if (!count[ch]) return false;
+    count[ch]--;
+  }
+  return true;
+}
+console.log(isAnagram("listen", "silent")); // true
