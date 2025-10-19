@@ -108,3 +108,15 @@ function intersection(arr1, arr2) {
 // Example
 console.log(intersection([1, 2, 3, 4], [3, 4, 5, 6]));
 // Output: [3,4]
+
+// Find Median of an Array
+function findMedian(arr) {
+  let sorted = [...arr].sort((a, b) => a - b);
+  let mid = Math.floor(sorted.length / 2);
+  if (sorted.length % 2 === 0) {
+    return (sorted[mid - 1] + sorted[mid]) / 2;
+  } else {
+    return sorted[mid];
+  }
+}
+console.log(findMedian([3, 1, 2, 4, 5])); // 3
