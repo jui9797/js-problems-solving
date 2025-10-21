@@ -130,3 +130,21 @@ function isSorted(arr) {
 }
 console.log(isSorted([1, 2, 3, 4])); // true
 console.log(isSorted([1, 3, 2])); // false
+
+// Remove Specific Element from Array
+
+function removeElement(arr, value) {
+  let result = [];
+  for (let item of arr) if (item !== value) result.push(item);
+  return result;
+}
+console.log(removeElement([1, 2, 3, 2, 4], 2)); // [1,3,4]
+
+// Find Sum of Even Numbers in Array
+
+function sumEven(arr) {
+  let sum = 0;
+  for (let num of arr) if (num % 2 === 0) sum += num;
+  return sum;
+}
+console.log(sumEven([1, 2, 3, 4, 5, 6])); // 12
