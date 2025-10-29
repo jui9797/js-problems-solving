@@ -196,3 +196,45 @@ function toCamelCase(str) {
 }
 console.log(toCamelCase("hello world from javascript"));
 // "helloWorldFromJavascript"
+
+// Find the Longest Palindromic Substring
+function longestPalindromicSubstring(s) {
+  let maxLength = 0;
+  let start = 0;
+  for (let i = 0; i < s.length; i++) {
+    // Odd length palindromes
+    let low = i,
+      high = i;
+    while (low >= 0 && high < s.length && s[low] === s[high]) {
+      if (high - low + 1 > maxLength) {
+        start = low;
+        maxLength = high - low + 1;
+      }
+      low--;
+      high++;
+    }
+    // Even length palindromes
+    low = i;
+    high = i + 1;
+
+    while (low >= 0 && high < s.length && s[low] === s[high]) {
+      if (high - low + 1 > maxLength) {
+        start = low;
+        maxLength = high - low + 1;
+      }
+      low--;
+      high++;
+    }
+  }
+  return s.substring(start, start + maxLength);
+}
+
+console.log(longestPalindromicSubstring("babad")); // "bab" or "aba"
+console.log(longestPalindromicSubstring("cbbd")); // "bb"
+// Validate Email Address
+function isValidEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+console.log(isValidEmail("abc@gmail.com")); // true
+console.log(isValidEmail("abc@gmail")); // false
