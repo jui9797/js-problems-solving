@@ -43,3 +43,13 @@ const cloned = deepClone(original);
 cloned.b.c = 3;
 // console.log(original.b.c); // 2
 // console.log(cloned.b.c);   // 3
+
+// Merge Two Objects
+function mergeObjects(obj1, obj2) {
+  let merged = {};
+  for (let key in obj1) merged[key] = obj1[key];
+  for (let key in obj2) merged[key] = obj2[key];
+  return merged;
+}
+console.log(mergeObjects({ a: 1, b: 2 }, { b: 3, c: 4 }));
+// {a:1,b:3,c:4}

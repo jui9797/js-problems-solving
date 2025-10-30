@@ -238,3 +238,13 @@ function isValidEmail(email) {
 }
 console.log(isValidEmail("abc@gmail.com")); // true
 console.log(isValidEmail("abc@gmail")); // false
+
+// Check if String Contains Only Digits
+function onlyDigits(str) {
+  for (let ch of str) {
+    if (ch < "0" || ch > "9") return false;
+  }
+  return true;
+}
+console.log(onlyDigits("12345")); // true
+console.log(onlyDigits("12a45")); // false
