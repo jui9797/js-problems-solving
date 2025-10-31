@@ -248,3 +248,59 @@ function onlyDigits(str) {
 }
 console.log(onlyDigits("12345")); // true
 console.log(onlyDigits("12a45")); // false
+
+// Find the First Unique Character in a String
+function firstUniqueChar(str) {
+  const charCount = {};
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  for (let i = 0; i < str.length; i++) {
+    if (charCount[str[i]] === 1) {
+      return str[i];
+    }
+  }
+  return null;
+}
+console.log(firstUniqueChar("swiss"));
+// "w"
+console.log(firstUniqueChar("repeater"));
+// "a"
+console.log(firstUniqueChar("aabbcc"));
+// null
+
+// Convert Snake Case to Kebab Case
+function snakeToKebab(str) {
+  return str.replace(/_/g, "-");
+}
+console.log(snakeToKebab("hello_world_from_js"));
+// "hello-world-from-js"
+
+// Count the Occurrences of a Character in a String
+function countCharOccurrences(str, char) {
+  let count = 0;
+  for (let ch of str) {
+    if (ch === char) count++;
+  }
+  return count;
+}
+console.log(countCharOccurrences("hello world", "o"));
+// 2
+console.log(countCharOccurrences("javascript", "a"));
+// 2
+
+// Check if a String is a Valid Palindrome
+function isPalindrome(str) {
+  let left = 0;
+  let right = str.length - 1;
+  while (left < right) {
+    if (str[left] !== str[right]) return false;
+    left++;
+    right--;
+  }
+  return true;
+}
+console.log(isPalindrome("racecar"));
+// true
+console.log(isPalindrome("hello"));
+// false
