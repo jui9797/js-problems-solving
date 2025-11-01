@@ -54,3 +54,26 @@ function isAnagram(a, b) {
   return true;
 }
 console.log(isAnagram("listen", "silent")); // true
+
+// Find GCD (Greatest Common Divisor)
+function gcd(a, b) {
+  while (b) {
+    let temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+}
+console.log(gcd(56, 98)); // 14
+
+// Find Sum of All Numbers in Nested Array
+
+function sumNested(arr) {
+  let sum = 0;
+  for (let item of arr) {
+    if (Array.isArray(item)) sum += sumNested(item);
+    else sum += item;
+  }
+  return sum;
+}
+console.log(sumNested([1, [2, [3, 4]], 5])); // 15
