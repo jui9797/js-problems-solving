@@ -97,3 +97,16 @@ function frequencyCount(arr) {
 }
 console.log(frequencyCount([1, 2, 2, 3, 3, 3]));
 // {1:1, 2:2, 3:3}
+
+// Find Common Elements Between Two Arrays
+
+function commonElements(a, b) {
+  let result = [];
+  for (let item of a) {
+    if (b.includes(item) && !result.includes(item)) result.push(item);
+  }
+  return result;
+}
+
+console.log(commonElements([1, 2, 3, 4], [3, 4, 5]));
+// [3,4]
