@@ -77,3 +77,23 @@ function sumNested(arr) {
   return sum;
 }
 console.log(sumNested([1, [2, [3, 4]], 5])); // 15
+
+// Remove Falsy Values (false, 0, "", null, undefined)
+
+function removeFalsy(arr) {
+  let result = [];
+  for (let val of arr) if (val) result.push(val);
+  return result;
+}
+console.log(removeFalsy([0, 1, false, 2, "", 3, null]));
+// [1, 2, 3]
+
+// Find Frequency of Each Element in an Array
+
+function frequencyCount(arr) {
+  let freq = {};
+  for (let num of arr) freq[num] = (freq[num] || 0) + 1;
+  return freq;
+}
+console.log(frequencyCount([1, 2, 2, 3, 3, 3]));
+// {1:1, 2:2, 3:3}
