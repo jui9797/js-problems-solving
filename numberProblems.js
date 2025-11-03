@@ -110,3 +110,20 @@ function commonElements(a, b) {
 
 console.log(commonElements([1, 2, 3, 4], [3, 4, 5]));
 // [3,4]
+
+//Count Occurrences of Each Element
+
+function countOccurrences(arr) {
+  let counts = {};
+  for (let i = 0; i < arr.length; i++) {
+    let item = arr[i];
+    if (counts[item]) {
+      counts[item]++;
+    } else {
+      counts[item] = 1;
+    }
+  }
+  return counts;
+}
+console.log(countOccurrences(["a", "b", "a", "c", "b", "a"]));
+// Output: { a: 3, b: 2, c: 1 }
