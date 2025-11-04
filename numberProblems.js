@@ -127,3 +127,39 @@ function countOccurrences(arr) {
 }
 console.log(countOccurrences(["a", "b", "a", "c", "b", "a"]));
 // Output: { a: 3, b: 2, c: 1 }
+
+// Find the Most Frequent Element in an Array
+
+function mostFrequent(arr) {
+  let freq = {};
+  let maxCount = 0;
+  let mostCommon;
+
+  for (let num of arr) {
+    freq[num] = (freq[num] || 0) + 1;
+    if (freq[num] > maxCount) {
+      maxCount = freq[num];
+      mostCommon = num;
+    }
+  }
+  return mostCommon;
+}
+console.log(mostFrequent([1, 2, 2, 3, 3, 3, 4]));
+// Output: 3
+
+// Sort an Array Without Using .sort()
+
+function manualSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[i]) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+}
+console.log(manualSort([5, 2, 8, 1, 3]));
+// Output: [1, 2, 3, 5, 8]
