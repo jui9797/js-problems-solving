@@ -163,3 +163,16 @@ function manualSort(arr) {
 }
 console.log(manualSort([5, 2, 8, 1, 3]));
 // Output: [1, 2, 3, 5, 8]
+
+// Group Elements by Type (Number, String, Boolean)
+function groupByType(arr) {
+  let result = { number: [], string: [], boolean: [] };
+  for (let item of arr) {
+    if (typeof item === "number") result.number.push(item);
+    else if (typeof item === "string") result.string.push(item);
+    else if (typeof item === "boolean") result.boolean.push(item);
+  }
+  return result;
+}
+console.log(groupByType([1, "hello", true, 42, "JS", false]));
+// Output: { number: [1, 42], string: ["hello", "JS"], boolean: [true, false] }
