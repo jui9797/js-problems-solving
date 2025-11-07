@@ -176,3 +176,24 @@ function groupByType(arr) {
 }
 console.log(groupByType([1, "hello", true, 42, "JS", false]));
 // Output: { number: [1, 42], string: ["hello", "JS"], boolean: [true, false] }
+
+//Print a Triangle Pattern
+
+function trianglePattern(rows) {
+  for (let i = 1; i <= rows; i++) {
+    let line = "";
+    for (let j = 1; j <= i; j++) {
+      line += "* ";
+    }
+    console.log(line);
+  }
+}
+trianglePattern(5);
+/*
+Output:
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+*/
