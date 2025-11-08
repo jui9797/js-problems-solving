@@ -310,3 +310,15 @@ function reverseString(str) {
 }
 console.log(reverseString("hello")); // "olleh"
 console.log(reverseString("JavaScript")); // "tpircSavaJ"
+
+//Count Frequency of Each Character in a String
+
+function charFrequency(str) {
+  let freq = {};
+  for (let ch of str) {
+    freq[ch] = (freq[ch] || 0) + 1;
+  }
+  return freq;
+}
+console.log(charFrequency("banana"));
+// Output: { b: 1, a: 3, n: 2 }

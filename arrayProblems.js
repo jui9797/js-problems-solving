@@ -163,3 +163,11 @@ function arrayDifference(arr1, arr2) {
 }
 console.log(arrayDifference([1, 2, 3], [2, 3, 4]));
 // Output: [1, 4]
+
+//Find Common Elements Between Multiple Arrays
+
+function commonElements(...arrays) {
+  return arrays.reduce((a, b) => a.filter((x) => b.includes(x)));
+}
+console.log(commonElements([1, 2, 3], [2, 3, 4], [3, 4, 5]));
+// Output: [3]
