@@ -337,3 +337,17 @@ function capitalizeSentences(str) {
 }
 console.log(capitalizeSentences("hello world. javascript is fun."));
 // Output: "Hello world. Javascript is fun."
+
+//Find the Longest Word in a String
+function longestWord(str) {
+  let words = str.split(" ");
+  let longest = "";
+  for (let word of words) {
+    if (word.length > longest.length) {
+      longest = word;
+    }
+  }
+  return longest;
+}
+console.log(longestWord("The quick brown fox jumps over the lazy dog"));
+// Output: "jumps"
