@@ -322,3 +322,18 @@ function charFrequency(str) {
 }
 console.log(charFrequency("banana"));
 // Output: { b: 1, a: 3, n: 2 }
+
+//Capitalize Every Sentence
+
+function capitalizeSentences(str) {
+  let sentences = str.split(". ");
+  for (let i = 0; i < sentences.length; i++) {
+    let s = sentences[i];
+    if (s.length > 0) {
+      sentences[i] = s[0].toUpperCase() + s.slice(1);
+    }
+  }
+  return sentences.join(". ");
+}
+console.log(capitalizeSentences("hello world. javascript is fun."));
+// Output: "Hello world. Javascript is fun."
