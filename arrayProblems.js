@@ -171,3 +171,24 @@ function commonElements(...arrays) {
 }
 console.log(commonElements([1, 2, 3], [2, 3, 4], [3, 4, 5]));
 // Output: [3]
+
+//Merge Two Sorted Arrays
+
+function mergeSortedArrays(a, b) {
+  let result = [];
+  let i = 0,
+    j = 0;
+
+  while (i < a.length && j < b.length) {
+    if (a[i] < b[j]) {
+      result.push(a[i]);
+      i++;
+    } else {
+      result.push(b[j]);
+      j++;
+    }
+  }
+  return result.concat(a.slice(i)).concat(b.slice(j));
+}
+console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6]));
+// Output: [1, 2, 3, 4, 5, 6]
