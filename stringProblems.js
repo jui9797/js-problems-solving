@@ -351,3 +351,21 @@ function longestWord(str) {
 }
 console.log(longestWord("The quick brown fox jumps over the lazy dog"));
 // Output: "jumps"
+
+//Count the Number of Words and Characters
+
+function textStats(text) {
+  let wordCount = 0;
+  let charCount = 0;
+  let words = text.split(" ");
+
+  for (let w of words) {
+    if (w !== "") {
+      wordCount++;
+      charCount += w.length;
+    }
+  }
+  return { wordCount, charCount };
+}
+console.log(textStats("I love learning JavaScript"));
+// Output: { wordCount: 4, charCount: 22 }
