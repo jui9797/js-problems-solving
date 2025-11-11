@@ -53,3 +53,20 @@ function mergeObjects(obj1, obj2) {
 }
 console.log(mergeObjects({ a: 1, b: 2 }, { b: 3, c: 4 }));
 // {a:1,b:3,c:4}
+
+//Find the Average Age of Users
+
+const users = [
+  { name: "A", age: 20 },
+  { name: "B", age: 25 },
+  { name: "C", age: 30 },
+];
+
+function averageAge(users) {
+  let total = 0;
+  for (let user of users) {
+    total += user.age;
+  }
+  return total / users.length;
+}
+console.log(averageAge(users)); // 25
