@@ -197,3 +197,15 @@ Output:
 * * * * 
 * * * * *
 */
+
+//Convert Time from 24-Hour to 12-Hour Format
+
+function convertTo12Hour(time) {
+  let [hour, minute] = time.split(":");
+  hour = parseInt(hour);
+  let suffix = hour >= 12 ? "PM" : "AM";
+  hour = hour % 12 || 12;
+  return `${hour}:${minute} ${suffix}`;
+}
+console.log(convertTo12Hour("18:45"));
+// Output: "6:45 PM"
