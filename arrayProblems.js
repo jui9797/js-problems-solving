@@ -204,3 +204,16 @@ function removeFalsy(arr) {
 }
 console.log(removeFalsy([0, 1, false, 2, "", 3, null]));
 // Output: [1, 2, 3]
+
+//Create Your Own map() Function (Without Using map)
+
+function customMap(arr, callback) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i], i));
+  }
+  return result;
+}
+
+console.log(customMap([1, 2, 3], (x) => x * 2));
+// Output: [2, 4, 6]
