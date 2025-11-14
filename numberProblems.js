@@ -209,3 +209,20 @@ function convertTo12Hour(time) {
 }
 console.log(convertTo12Hour("18:45"));
 // Output: "6:45 PM"
+
+//Array Shuffle (Fisher–Yates Algorithm)
+function shuffle(arr) {
+  let i = arr.length - 1;
+
+  while (i > 0) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    i--;
+  }
+
+  return arr;
+}
+
+console.log(shuffle([1, 2, 3, 4, 5]));
