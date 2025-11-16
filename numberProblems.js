@@ -226,3 +226,21 @@ function shuffle(arr) {
 }
 
 console.log(shuffle([1, 2, 3, 4, 5]));
+
+// Find Intersection of Two Arrays (Efficient)
+
+function intersection(a, b) {
+  let set = {};
+  let result = [];
+
+  for (let x of a) set[x] = true;
+
+  for (let y of b) {
+    if (set[y]) result.push(y);
+  }
+
+  return result;
+}
+
+console.log(intersection([1, 2, 3, 4], [3, 4, 5]));
+// [3,4]
