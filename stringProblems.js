@@ -389,3 +389,16 @@ function throttle(fn, limit) {
 
 const work = throttle(() => console.log("Scrolling..."), 1000);
 work();
+
+// Parallel Promise Runner (Run Multiple Async Tasks Together)
+
+async function runParallel(tasks) {
+  return Promise.all(tasks.map((task) => task()));
+}
+
+const task1 = () => Promise.resolve("A done");
+const task2 = () => Promise.resolve("B done");
+
+runParallel([task1, task2]).then(console.log);
+
+// ["A done", "B done"]
