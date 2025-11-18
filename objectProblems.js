@@ -70,3 +70,14 @@ function averageAge(users) {
   return total / users.length;
 }
 console.log(averageAge(users)); // 25
+
+// Count the number of properties in an object
+function countProps(obj) {
+  let count = 0;
+  for (let key in obj) {
+    count++;
+  }
+  return count;
+}
+
+console.log(countProps({ name: "Jui", age: 20, city: "Dhaka" }));
