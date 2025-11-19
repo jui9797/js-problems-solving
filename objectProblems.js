@@ -81,3 +81,17 @@ function countProps(obj) {
 }
 
 console.log(countProps({ name: "Jui", age: 20, city: "Dhaka" }));
+
+//Convert an object to an array of [key, value] pairs
+
+function objectToPairs(obj) {
+  const result = [];
+
+  for (let key in obj) {
+    result.push([key, obj[key]]);
+  }
+
+  return result;
+}
+
+console.log(objectToPairs({ a: 1, b: 2 }));
