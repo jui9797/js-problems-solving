@@ -95,3 +95,17 @@ function objectToPairs(obj) {
 }
 
 console.log(objectToPairs({ a: 1, b: 2 }));
+
+// Compare two objects (shallow equality)
+
+function isEqual(obj1, obj2) {
+  for (let key in obj1) {
+    if (obj1[key] !== obj2[key]) return false;
+  }
+  for (let key in obj2) {
+    if (obj1[key] !== obj2[key]) return false;
+  }
+  return true;
+}
+
+console.log(isEqual({ a: 1, b: 2 }, { a: 1, b: 2 }));
